@@ -2,7 +2,8 @@ import { Badge } from '@material-ui/core';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
-import {mobile} from '../Responsive'
+import {mobile} from '../Responsive';
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     padding: 10px 20px;
@@ -79,18 +80,25 @@ const Navbar = () => {
                     <Search style={{color:"gray", fontSize:16}}/>
                 </SearchContainer>
             </Left>
+            <Link to="/">
             <Center>
                 <Logo>PRESTO.</Logo>
             </Center>
+            </Link>
             <Right>
-
+                    <Link to={`/register/`}>
                     <MenuItem>REGISTER</MenuItem>
+                    </Link>
+                    <Link to={`/login/`}>
                     <MenuItem>SIGN IN</MenuItem>
+                    </Link>
+                    <Link to={`/cart/`}>
                     <MenuItem>
                         <Badge badgeContent={4} color="primary">
                             <ShoppingCartOutlined />
                         </Badge>
                     </MenuItem>
+                    </Link>
             </Right>
         </Wrapper> 
     </Container>
