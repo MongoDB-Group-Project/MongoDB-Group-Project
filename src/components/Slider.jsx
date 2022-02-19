@@ -4,6 +4,7 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import  styled  from "styled-components";
 import { sliderItems } from '../data';
 import styledComponents from 'styled-components';
+import { mobile } from '../Responsive';
 
 const Container = styled.div`
     width: 100%;
@@ -11,6 +12,7 @@ const Container = styled.div`
     display: flex;
     position: relative;
     overflow: hidden;
+    ${mobile({display: "none"})}
 `;
 
 const Arrow = styled.div`
