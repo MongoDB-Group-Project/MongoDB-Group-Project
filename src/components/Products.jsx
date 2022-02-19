@@ -18,7 +18,7 @@ const Products = ({cat,filters,sort}) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(()=>{
-      const getProds = async() =>{
+      const getProducts = async() =>{
           try{
             const res = await axios.get("https://localhost:5000/api/products");
             console.log(res)
@@ -26,7 +26,7 @@ const Products = ({cat,filters,sort}) => {
               console.log(err);
           }
       };
-      getProds()
+      getProducts()
   }, [cat]);
 
   return (
